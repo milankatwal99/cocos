@@ -1,0 +1,6 @@
+framework module milan2056 {
+  umbrella header "milan2056-umbrella.h"
+
+  export *
+  module * { export * }
+}

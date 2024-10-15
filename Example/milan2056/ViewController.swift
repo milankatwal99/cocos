@@ -1,18 +1,26 @@
 //
 //  ViewController.swift
-//  milan2056
+//  MyCocoapodsLibrary
 //
-//  Created by milankatwal99 on 10/15/2024.
-//  Copyright (c) 2024 milankatwal99. All rights reserved.
+//  Created by iamnaz on 02/21/2020.
+//  Copyright (c) 2020 iamnaz. All rights reserved.
 //
 
 import UIKit
+import MyCocoapodsLibrary
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let log = Logger()
+        log.printLog()
+        let frameworkBundle = Bundle(for: Logger.self)
+        let path = frameworkBundle.path(forResource: "Resources", ofType: "bundle")
+        let resourcesBundle = Bundle(url: URL(fileURLWithPath: path!))
+        let image = UIImage(named: "flower.jpg", in: resourcesBundle, compatibleWith: nil)
+        
+        print(image)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,4 +29,3 @@ class ViewController: UIViewController {
     }
 
 }
-
